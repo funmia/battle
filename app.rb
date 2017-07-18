@@ -1,14 +1,13 @@
 require 'sinatra/base'
-require 'shotgun'
 
 class Battle < Sinatra::Base
-  get '/' do
-    "Testing infrastructure working!"
-  end
-
   # get '/' do
-  #   erb(:index)
+  #   "Testing infrastructure working!"
   # end
+
+  get '/' do
+    erb(:index)
+  end
 
   post '/names' do
     @player_1 = params[:player_1]
