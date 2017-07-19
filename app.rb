@@ -27,7 +27,10 @@ enable :sessions
   get '/attack' do
     @player_1 = $player_1.name
     @player_2 = $player_2.name
-    erb(:attack)
+    @player_1_points = $player_1.reduce_points
+    @player_2_points = $player_2.reduce_points
+    # erb(:attack)
+    erb(:play)
   end
 
   run! if app_file == $0
