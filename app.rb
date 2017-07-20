@@ -14,6 +14,7 @@ enable :sessions
   post '/names' do
     $player_1  = Player.new(params[:player_1])
     $player_2  = Player.new(params[:player_2])
+
     p params
     redirect '/play'
   end
@@ -21,14 +22,15 @@ enable :sessions
   get '/play' do
     @player_1 = $player_1.name
     @player_2 = $player_2.name
+    @commentator = ""
     erb(:play)
   end
 
   get '/attack' do
     @player_1 = $player_1.name
     @player_2 = $player_2.name
-    @player_1_points = $player_1.reduce_points
     @player_2_points = $player_2.reduce_points
+    @commentator = "#{@player_1} attacked #{@player_2}!!!"
     # erb(:attack)
     erb(:play)
   end

@@ -7,8 +7,15 @@ describe 'Player' do
     expect(bob.name).to eq "Bob"
   end
 
-  it "reduces player's points" do
-    bob.reduce_points
-    expect(bob.points).to eq 50
+  describe "#points" do
+    it "returns the current hit points" do
+      expect(bob.points).to eq Player::DEFAULT_POINTS
+    end
+  end
+
+  describe "#reduce_points" do
+    it "reduces player's points" do
+      expect{bob.reduce_points}.to change {bob.points}.by(-10)
+    end
   end
 end
