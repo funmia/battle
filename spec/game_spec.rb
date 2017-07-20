@@ -11,6 +11,12 @@ describe 'Game' do
     end
   end
 
+  describe '#current_turn' do
+    it 'starts as player 1' do
+      expect(game.current_turn).to eq game.player_1
+    end
+  end
+
   describe '#attack' do
     it 'damages the player' do
       allow(bill).to receive(:reduce_points) { 50 }
