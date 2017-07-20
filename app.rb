@@ -28,7 +28,7 @@ enable :sessions
   get '/attack' do
     @player_1 = $game.player_1.name
     @player_2 = $game.player_2.name
-    @player_2_points = $game.attack($game.player_2)
+    $game.attack
     @commentator = "#{@player_1} attacked #{@player_2}!!!"
     # erb(:attack)
     erb(:play)

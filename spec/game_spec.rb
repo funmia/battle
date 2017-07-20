@@ -13,8 +13,8 @@ describe 'Game' do
 
   describe '#attack' do
     it 'damages the player' do
-      allow(bob).to receive(:reduce_points) { 50 }
-      expect(game.attack(bob)).to eq 50
+      allow(bill).to receive(:reduce_points) { 50 }
+      expect(game.attack).to eq 50
     end
   end
 end
